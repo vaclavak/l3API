@@ -1,5 +1,7 @@
 # l3API
 
+![Badge](https://img.shields.io/badge/l3API-gradle-brightgreen?style=flat-square) ![Badge](https://img.shields.io/badge/l3Tool-maven-orange?style=flat-square) [![License](https://img.shields.io/badge/License-l3API-7f6be0?style=flat-square)](https://github.com/vaclavak/l3API?tab=License-1-ov-file)
+
 l3API is a free licensing API based on springboot, it allows you to create a restapi licensing server, which you can then send requests to from your software, and validate wheter a license for your software is valid.
 
 
