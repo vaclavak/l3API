@@ -42,6 +42,40 @@ git clone https://github.com/vaclavak/l3API.git
 gradlew build
 ```
 
+## Changing the port
+
+l3API runs on port `8080` by default, it is highly recommended to change this
+
+You can change the port by navigating to `application.properties` in `/API/l3api/src/main/resources`
+
+Change `8080` to the port you want
+
+```properties
+server.port=8080
+```
+
+
+
+## Example usage in a client
+
+The `HTTPConnection` class used here can be found in the l3Lib library, more information bellow
+
+```java
+public class Main {
+	
+	public static void main(String[] args) {
+		boolean isValid = Boolean.valueOf(HTTPConnection.getJson("http://yourdomain.com:8080/api/license/verify/" + args[0], "valid"));
+		
+		if(isValid) {
+			System.out.println("Hello world");
+		}else {
+			System.out.println("Invalid license...");
+		}
+	}
+
+}
+```
+
 
 # l3Tool
 
@@ -84,3 +118,22 @@ mvn clean package
 The binary will be located in "target/l3Tool-`<version>`-SNAPSHOT.jar"
 
 All contents of this repository are licensed under the [l3API](https://github.com/vaclavak/l3API?tab=License-1-ov-file) license
+
+# L3Lib
+
+L3Lib is a library containing licensing features from the licensing server, IPEncoding, which allows you to encode a string into a format that can then be sent to your l3API server, where you can decode it using the same library, and implement usage for it, for example setting timeouts for different ip adresses, and more features
+
+
+## Adding as a dependency
+
+You may need to be logged in with your github account in either `settings.xml` or in your `build.gradle`, since the library is published on github packages
+
+Maven
+
+```xml
+<dependency>
+  <groupId>vpp.vac.l3lib</groupId>
+  <artifactId>l3api</artifactId>
+  <version>VERSION</version>
+</dependency>
+```
