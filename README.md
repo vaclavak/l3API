@@ -80,3 +80,5 @@ mvn clean package
 ```
 
 The binary will be located in "target/l3Tool-`<version>`-SNAPSHOT.jar"
+
+All contents of this repository are licensed under the [l3API](https://github.com/vaclavak/l3API?tab=License-1-ov-file) license
