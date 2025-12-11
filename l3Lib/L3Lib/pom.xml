@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>vpp.vac.l3lib</groupId>
   <artifactId>l3api</artifactId>
-  <version>0.0.1</version> <!-- Release version, no -SNAPSHOT -->
+  <version>0.0.2</version> <!-- Release version, no -SNAPSHOT -->
   <name>L3Lib</name>
 
   <!-- Deploy to GitHub Packages -->

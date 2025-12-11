@@ -9,6 +9,9 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import vpp.vac.l3lib.networking.HTTPConnection;
+import vpp.vac.l3lib.util.L3ServerComponent;
+
 public class License {
 	
 	private static final int SALT_LENGTH = 16;
@@ -103,6 +106,10 @@ public class License {
 
         String secret = Base64.getEncoder().withoutPadding().encodeToString(randomBytes);
         return secret;
+    }
+    
+    public boolean getValid(L3ServerComponent component) {
+    	return Boolean.valueOf(HTTPConnection.getBoolean(component.getURL() + component.getKey(), "valid"));
     }
 
 }
